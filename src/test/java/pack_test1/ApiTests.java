@@ -14,10 +14,10 @@ public class ApiTests {
         Assert.assertTrue(true);
     }
 
-    @Test(groups = {"t2"})
+    @Test(groups = {"t2", "t3"})
     @Unstable @Flaky
     void passedTest2(){
-        System.out.println("IT'S T2 TEST");
+        System.out.println("IT'S T2 and T3 TEST");
         Assert.assertTrue(true);
     }
     @Test(groups = {"t2"})
