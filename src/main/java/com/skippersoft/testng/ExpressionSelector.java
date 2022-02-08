@@ -13,7 +13,7 @@ public class ExpressionSelector implements IMethodSelector {
     @Override
     public boolean includeMethod(IMethodSelectorContext iMethodSelectorContext, ITestNGMethod iTestNGMethod, boolean b) {
         Optional<String> tagInput = Optional.ofNullable(System.getProperty("tags"));
-        return tagInput.isEmpty() ||
+        return !tagInput.isPresent() ||
                 asList(iTestNGMethod.getGroups())
                         .containsAll(asList(tagInput.get().split("&")));
     }
